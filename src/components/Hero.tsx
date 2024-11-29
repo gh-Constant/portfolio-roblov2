@@ -20,13 +20,18 @@ export default function Hero() {
         />
       </div>
 
+      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="relative z-10 container mx-auto px-4 text-center"
       >
-        <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold mb-6 tracking-tight">
+        <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-4 tracking-tight text-gray-400">
+          Based In France
+        </p>
+        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight">
           <span className="text-white">Constant </span>
           <span className="text-purple-500">Roblox </span>
           <span className="text-purple-500">Scripting </span>
@@ -35,20 +40,6 @@ export default function Hero() {
           <span className="text-white">Portfolio</span>
         </h1>
         
-        <TypeAnimation
-          sequence={[
-            'Building Immersive Games',
-            2000,
-            'Creating Engaging Experiences',
-            2000,
-            'Developing Custom Systems',
-            2000,
-          ]}
-          wrapper="div"
-          speed={50}
-          className="text-xl md:text-2xl text-gray-400 mb-8"
-          repeat={Infinity}
-        />
 
         <div className="flex flex-wrap justify-center gap-4">
           <a
