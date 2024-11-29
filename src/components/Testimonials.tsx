@@ -31,8 +31,8 @@ export default function Testimonials() {
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
           <div className="flex justify-center gap-1 mb-6">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="w-6 h-6 text-purple-500 fill-purple-500" />
+            {['star1', 'star2', 'star3', 'star4', 'star5'].map((id) => (
+              <Star key={id} className="w-6 h-6 text-purple-500 fill-purple-500" />
             ))}
           </div>
           <h2 className="text-4xl font-bold mb-4">Client Testimonials</h2>
@@ -42,9 +42,9 @@ export default function Testimonials() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <motion.div
-              key={index}
+              key={testimonial.name}
               variants={itemVariants}
               className="bg-dark-300 p-6 rounded-xl border border-dark-700 flex flex-col"
             >

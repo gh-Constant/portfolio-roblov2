@@ -10,6 +10,7 @@ export interface Project {
   media: Media;
   tags: string[];
   link: string;
+  creator: string;
 }
 
 export interface System {

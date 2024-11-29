@@ -45,9 +45,9 @@ export default function Projects() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {content.projects.map((project: Project, index: number) => (
+          {content.projects.map((project: Project) => (
             <motion.div
-              key={index}
+              key={project.title}
               variants={itemVariants}
               className="bg-dark-300 rounded-xl overflow-hidden border border-dark-700"
             >
@@ -72,12 +72,13 @@ export default function Projects() {
                 )}
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{project.title}</h3>
+                <h3 className="text-xl font-bold mb-1">{project.title}</h3>
+                <p className="text-sm text-gray-400 mb-3">Owned by {project.creator}</p>
                 <p className="text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag: string, tagIndex: number) => (
+                  {project.tags.map((tag: string) => (
                     <span
-                      key={tagIndex}
+                      key={tag}
                       className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm"
                     >
                       {tag}
