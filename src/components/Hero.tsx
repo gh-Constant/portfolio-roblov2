@@ -36,6 +36,7 @@ export default function Hero() {
           <h1 className="mt-6 text-[clamp(2.5rem,8vw,5.5rem)] leading-[1.1] font-bold tracking-tight select-none">
             <span className="text-white">Constant </span>
             <span className="text-purple-500">{t('hero.title')}</span>
+            <span className="text-white">Portfolio</span>
           </h1>
           <p className="mt-6 text-gray-300 text-xl max-w-3xl select-none">
             {t('hero.description')}

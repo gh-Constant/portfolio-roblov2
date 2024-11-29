@@ -11,7 +11,7 @@ interface LanguageContextType {
 const translations = {
   en: {
     "hero.location": "Based In France",
-    "hero.title": "Constant Roblox Scripting Services & Portfolio",
+    "hero.title": "Roblox Scripting Services & ",
     "hero.description": "Hi, I'm Constant, I write clean, organized roblox scripts that can be used to build reliable games and systems on Roblox.",
     "hero.cta.works": "See My Works",
     "hero.cta.contact": "Contact on Discord",
@@ -34,7 +34,7 @@ const translations = {
   },
   fr: {
     "hero.location": "Basé en France",
-    "hero.title": "Services de Scripting Roblox Constant & Portfolio",
+    "hero.title": "Services de Scripting Roblox & ",
     "hero.description": "Bonjour, je suis Constant, j'écris des scripts Roblox propres et organisés qui peuvent être utilisés pour créer des jeux et des systèmes fiables sur Roblox.",
     "hero.cta.works": "Voir Mes Travaux",
     "hero.cta.contact": "Contact Discord",
