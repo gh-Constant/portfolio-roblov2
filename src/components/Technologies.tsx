@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { technologies } from '../data/technologies';
-import { useLanguage } from '../contexts/LanguageContext';  
+import { useLanguage } from '../contexts/LanguageContext'
 
 export default function Technologies() {
   const { t } = useLanguage();

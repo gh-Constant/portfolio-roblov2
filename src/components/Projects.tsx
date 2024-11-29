@@ -1,20 +1,12 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Play } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
 import { Project } from '../types/content';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Calendar } from 'lucide-react';
 
 export default function Projects() {
   const { content, loading, error } = useContent();
   const { t } = useLanguage();
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
-  };
 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
@@ -32,7 +24,11 @@ export default function Projects() {
   return (
     <section id="projects" className="py-20 bg-black">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
-        <motion.div variants={itemVariants} className="space-y-4 mb-10">
+        <motion.div 
+          variants={itemVariants} 
+          initial="hidden"
+          animate="visible"
+          className="space-y-4 mb-10">
           <h1 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold text-stone-200">
             {t('projects.title')}
           </h1>
@@ -40,65 +36,49 @@ export default function Projects() {
             {t('projects.description')}
           </p>
         </motion.div>
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
-        >
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {content.projects.map((project: Project) => (
             <motion.div
               key={project.title}
               variants={itemVariants}
-              className="bg-dark-300 rounded-xl overflow-hidden border border-dark-700"
+              initial="hidden"
+              animate="visible"
+              className="bg-dark-300 rounded-xl overflow-hidden border border-dark-700 hover:border-purple-500/50 transition-all duration-300 flex flex-col"
             >
               <div className="relative h-48">
-                {project.media.type === 'video' ? (
-                  <>
-                    <img
-                      src={project.media.thumbnail}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/50">
-                      <Play className="w-12 h-12 text-white" />
-                    </div>
-                  </>
-                ) : (
-                  <img
-                    src={project.media.url}
-                    alt={project.title}
-                    className="w-full h-full object-cover"
-                  />
-                )}
+                <img
+                  src={project.media.url}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-300/80 to-transparent" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-1">{project.title}</h3>
-                <p className="text-sm text-gray-400 mb-3">{t('projects.ownedBy')} {project.creator}</p>
-                <p className="text-gray-400 mb-4">{project.description}</p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag: string) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="flex-grow">
+                  <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+                  <p className="text-gray-400 mb-4">{project.description}</p>
                 </div>
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300"
-                >
-                  {t('projects.viewProject')} <ExternalLink size={16} />
-                </a>
+                <div className="space-y-4 mt-6 pt-6 border-t border-dark-700">
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-1 text-xs rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                    <Calendar size={14} />
+                    <span>{t('projects.date')}{project.projectDate}</span>
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

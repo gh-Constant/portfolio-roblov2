@@ -1,7 +1,5 @@
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
-import { System } from '../types/content';
 import { useLanguage } from '../contexts/LanguageContext';
 
 
@@ -42,12 +40,18 @@ export default function Systems() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {content.systems.map((system, index) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          {content.systems.map((system) => (
             <motion.div
               key={system.title}
               variants={itemVariants}
-              className="bg-dark-300 rounded-xl overflow-hidden border border-dark-700 hover:border-purple-500/50 transition-all duration-300"
+              className="bg-dark-300 rounded-xl overflow-hidden border border-dark-700"
             >
               <div className="relative h-48">
                 <img
@@ -55,23 +59,26 @@ export default function Systems() {
                   alt={system.title}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-300 to-transparent" />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">{system.title}</h3>
+                <h3 className="text-xl font-bold mb-1">{system.title}</h3>
                 <p className="text-gray-400 mb-4">{system.description}</p>
-                <ul className="space-y-2">
-                  {system.features.map((feature: string, featureIndex: number) => (
-                    <li key={featureIndex} className="flex items-center text-gray-300">
-                      <ChevronRight className="w-4 h-4 text-purple-500 mr-2" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex flex-col gap-4 mt-6 pt-6 border-t border-dark-700">
+                  <div className="flex flex-wrap gap-2">
+                    {system.features.map((feature: string, index: number) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 text-xs rounded-md bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                      >
+                        {feature}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

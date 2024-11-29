@@ -8,6 +8,7 @@ export interface Project {
   };
   tags: string[];
   link: string;
+  projectDate: string;
 }
 
 export const projects: Project[] = [
@@ -19,7 +20,8 @@ export const projects: Project[] = [
       url: "https://images.unsplash.com/photo-1614465000772-1b302f406c47?w=800&auto=format&fit=crop&q=60"
     },
     tags: ["Roblox", "Luau", "Game Design"],
-    link: "https://www.roblox.com/games/example1"
+    link: "https://www.roblox.com/games/example1",
+    projectDate: "2022-01-01"
   },
   {
     title: "Racing Simulator",
@@ -30,7 +32,8 @@ export const projects: Project[] = [
       thumbnail: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=800&auto=format&fit=crop&q=60"
     },
     tags: ["Roblox", "Physics", "Multiplayer"],
-    link: "https://www.roblox.com/games/example2"
+    link: "https://www.roblox.com/games/example2",
+    projectDate: "2022-02-01"
   },
   {
     title: "RPG Adventure",
@@ -40,6 +43,7 @@ export const projects: Project[] = [
       url: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&auto=format&fit=crop&q=60"
     },
     tags: ["Roblox", "RPG", "Game Systems"],
-    link: "https://www.roblox.com/games/example3"
+    link: "https://www.roblox.com/games/example3",
+    projectDate: "2022-03-01"
   }
 ];

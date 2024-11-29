@@ -30,7 +30,8 @@ const translations = {
     "projects.viewProject": "View Project",
     "projects.ownedBy": "Owned by",
     "testimonials.title": "Client Testimonials",
-    "testimonials.description": "Here's what some of my clients have to say about working with me."
+    "testimonials.description": "Here's what some of my clients have to say about working with me.",
+    "projects.date": "Project Date: "
   },
   fr: {
     "hero.location": "Basé en France",
@@ -53,7 +54,8 @@ const translations = {
     "projects.viewProject": "Voir le Projet",
     "projects.ownedBy": "Créé par",
     "testimonials.title": "Témoignages Clients",
-    "testimonials.description": "Voici ce que certains de mes clients disent de leur collaboration avec moi."
+    "testimonials.description": "Voici ce que certains de mes clients disent de leur collaboration avec moi.",
+    "projects.date": "Date du Projet : "
   }
 };
 

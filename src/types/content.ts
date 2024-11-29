@@ -11,6 +11,7 @@ export interface Project {
   tags: string[];
   link: string;
   creator: string;
+  projectDate: string;
 }
 
 export interface System {
