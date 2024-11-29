@@ -60,10 +60,23 @@ const translations = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>('en');
+  const [language, setLanguage] = useState<Language>(() => {
+    // First check localStorage
+    const savedLanguage = localStorage.getItem('preferred-language');
+    if (savedLanguage === 'fr' || savedLanguage === 'en') {
+      return savedLanguage;
+    }
+    // Then check browser language
+    const browserLang = navigator.language.toLowerCase();
+    return browserLang.startsWith('fr') ? 'fr' : 'en';
+  });
 
   const toggleLanguage = () => {
-    setLanguage(prev => prev === 'en' ? 'fr' : 'en');
+    setLanguage(prev => {
+      const newLang = prev === 'en' ? 'fr' : 'en';
+      localStorage.setItem('preferred-language', newLang);
+      return newLang;
+    });
   };
 
   const t = (key: string) => {
