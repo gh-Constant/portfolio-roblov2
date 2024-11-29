@@ -9,25 +9,25 @@ export const technologies: Technology[] = [
   { 
     name: "Roblox Studio", 
     description: "Roblox's official IDE", 
-    logo: "https://images.unsplash.com/photo-1614465000772-1b302f406c47?w=100", 
+    logo: "/rbxstudiologo.png", 
     bgColorHex: "#0ACF83" 
   },
   { 
     name: "Luau", 
     description: "Roblox's programming language", 
-    logo: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=100", 
+    logo: "/luaulogo.png", 
     bgColorHex: "#3178C6" 
   },
   { 
     name: "Git", 
     description: "Version controlling system", 
-    logo: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=100", 
+    logo: "/gitlogo.png", 
     bgColorHex: "#61DAFB" 
   },
   { 
     name: "Rojo", 
     description: "Git and other IDEs in Roblox Studio", 
-    logo: "https://images.unsplash.com/photo-1614729939124-032f0b56c9ce?w=100", 
+    logo: "/rojoLogo.png", 
     bgColorHex: "#F1502F" 
   },
   { 
@@ -39,7 +39,7 @@ export const technologies: Technology[] = [
   { 
     name: "Cursor", 
     description: "VSCode fork with AI", 
-    logo: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=100", 
+    logo: "https://www.cursor.com/assets/images/logo.svg", 
     bgColorHex: "#000000" 
   },
   { 
@@ -51,7 +51,7 @@ export const technologies: Technology[] = [
   { 
     name: "Webstorm", 
     description: "Web IDE (EmmyLua)", 
-    logo: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?w=100", 
+    logo: "https://resources.jetbrains.com/storage/products/webstorm/img/meta/webstorm_logo_300x300.png", 
     bgColorHex: "#F24E1E" 
   }
 ];

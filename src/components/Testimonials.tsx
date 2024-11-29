@@ -1,24 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Star } from 'lucide-react';
-
-const testimonials = [
-  {
-    text: "Exceptional work on our game project. The code was clean and well-documented.",
-    author: "John D.",
-    role: "Game Developer"
-  },
-  {
-    text: "Delivered exactly what we needed, on time and with great communication.",
-    author: "Sarah M.",
-    role: "Project Manager"
-  },
-  {
-    text: "Outstanding technical skills and attention to detail.",
-    author: "Mike R.",
-    role: "Studio Owner"
-  }
-];
+import { Star, User } from 'lucide-react';
+import { testimonials } from '../data/testimonials';
 
 export default function Testimonials() {
   const containerVariants = {
@@ -64,12 +46,17 @@ export default function Testimonials() {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-dark-300 p-6 rounded-xl border border-dark-700"
+              className="bg-dark-300 p-6 rounded-xl border border-dark-700 flex flex-col"
             >
-              <p className="text-gray-300 mb-6 italic">"{testimonial.text}"</p>
-              <div>
-                <p className="font-bold">{testimonial.author}</p>
-                <p className="text-purple-400">{testimonial.role}</p>
+              <p className="text-gray-300 italic flex-grow">"{testimonial.text}"</p>
+              <div className="flex items-center gap-4 mt-6 pt-6 border-t border-dark-700">
+                <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
+                  <User className="w-6 h-6 text-purple-400" />
+                </div>
+                <div>
+                  <p className="font-bold">{testimonial.name}</p>
+                  <p className="text-purple-400">{testimonial.position}</p>
+                </div>
               </div>
             </motion.div>
           ))}

@@ -1,6 +1,4 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
 
 export default function Hero() {
   return (
@@ -42,12 +40,20 @@ export default function Hero() {
         
 
         <div className="flex flex-wrap justify-center gap-4">
-          <a
-            href="#projects"
+          <button
+            onClick={() => {
+              const projectsSection = document.querySelector('#projects');
+              if (projectsSection) {
+                projectsSection.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            }}
             className="relative z-10 inline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border border-dark-700 bg-[linear-gradient(110deg,#1A1A1A,45%,#262626,55%,#1A1A1A)] hover:bg-[linear-gradient(110deg,#262626,45%,#404040,55%,#262626)] bg-[length:200%_100%] px-6 font-medium text-sm sm:text-base text-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
           >
             View Projects
-          </a>
+          </button>
           <a
             href="https://discord.com/users/1174734956296155278"
             target="_blank"

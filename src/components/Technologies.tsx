@@ -30,7 +30,7 @@ export default function Technologies() {
       whileInView="visible"
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
-      className="relative z-[10] py-16 sm:py-24 bg-gradient-to-b from-black/80 to-dark-300/80"
+      className="relative z-[10] py-16 sm:py-24 bg-black"
       id="about"
     >
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">

@@ -1,16 +1,15 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Play } from 'lucide-react';
-import { projects } from '../data/projects';
+import { useContent } from '../hooks/useContent';
 
 export default function Projects() {
+  const { content, loading, error } = useContent();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
+      transition: { staggerChildren: 0.2 }
     }
   };
 
@@ -19,34 +18,37 @@ export default function Projects() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: {
-        duration: 0.5
-      }
+      transition: { duration: 0.5 }
     }
   };
 
+  if (loading) return <div className="py-20 text-center">Loading...</div>;
+  if (error) return <div className="py-20 text-center">Error loading projects</div>;
+  if (!content) return null;
+
   return (
     <section className="py-20 bg-black">
-      <motion.div 
-        className="container mx-auto px-4"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Here are some of my best works that showcase my skills in game development and Roblox scripting.
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+        <motion.div variants={itemVariants} className="space-y-4 mb-10">
+          <h1 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold text-stone-200">
+            Projects
+          </h1>
+          <p className="text-stone-200/70 text-sm min-[430px]:text-base max-w-lg md:max-w-3xl">
+            Discover the projects I've worked on, showcasing my skills and creativity.
           </p>
         </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+        >
+          {content.projects.map((project, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gray-900 rounded-xl overflow-hidden hover:transform hover:scale-105 transition-transform duration-300"
+              className="bg-dark-300 rounded-xl overflow-hidden border border-dark-700"
             >
               <div className="relative h-48">
                 {project.media.type === 'video' ? (
@@ -72,7 +74,7 @@ export default function Projects() {
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 <p className="text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
+                  {project.tags.map((tag: string, tagIndex: number) => (
                     <span
                       key={tagIndex}
                       className="px-3 py-1 bg-purple-500/20 text-purple-400 rounded-full text-sm"
@@ -92,8 +94,8 @@ export default function Projects() {
               </div>
             </motion.div>
           ))}
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

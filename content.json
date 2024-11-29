@@ -1,0 +1,25 @@
+{
+  "systems": [
+    {
+      "title": "Advanced Combat System",
+      "description": "A flexible and responsive combat system...",
+      "features": [
+        "Combo system with chain attacks",
+        "Skill cooldown management"
+      ],
+      "image": "https://images.unsplash.com/..."
+    }
+  ],
+  "projects": [
+    {
+      "title": "Zombie Defense Game",
+      "description": "A thrilling tower defense game...",
+      "media": {
+        "type": "image",
+        "url": "https://images.unsplash.com/..."
+      },
+      "tags": ["Roblox", "Luau", "Game Design"],
+      "link": "https://www.roblox.com/games/example1"
+    }
+  ]
+} 
