@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import { ContentData } from '../types/content';
 
 const CONTENT_URL = 'https://raw.githubusercontent.com/gh-Constant/portfoliorbx-content/refs/heads/main/content.json';
 

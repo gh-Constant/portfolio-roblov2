@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Play } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
+import { Project } from '../types/content';
 
 export default function Projects() {
   const { content, loading, error } = useContent();
@@ -27,7 +28,7 @@ export default function Projects() {
   if (!content) return null;
 
   return (
-    <section className="py-20 bg-black">
+    <section id="projects" className="py-20 bg-black">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
         <motion.div variants={itemVariants} className="space-y-4 mb-10">
           <h1 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold text-stone-200">
@@ -44,7 +45,7 @@ export default function Projects() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {content.projects.map((project, index) => (
+          {content.projects.map((project: Project, index: number) => (
             <motion.div
               key={index}
               variants={itemVariants}

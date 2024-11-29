@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
+import { System } from '../types/content';
+
 
 export default function Systems() {
   const { content, loading, error } = useContent();
@@ -44,7 +46,7 @@ export default function Systems() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {content.systems.map((system, index) => (
+          {content.systems.map((system: System, index: number) => (
             <motion.div
               key={index}
               variants={itemVariants}

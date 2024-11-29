@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { technologies } from '../data/technologies';
 
@@ -51,8 +50,7 @@ export default function Technologies() {
               className="flex flex-1 gap-5 p-4 rounded-xl bg-gradient-to-br from-dark-200 to-dark-300 border border-dark-700 hover:from-dark-300 hover:to-dark-400 transition-all duration-300 h-[120px]"
             >
               <div 
-                className="p-4 rounded-lg w-[80px] h-[80px] flex items-center justify-center self-center"
-                style={{ backgroundColor: `${tech.bgColorHex}33` }}
+                className={`p-4 rounded-lg w-[80px] h-[80px] flex items-center justify-center self-center bg-[${tech.bgColorHex}33]`}
               >
                 <img    
                   src={tech.logo}

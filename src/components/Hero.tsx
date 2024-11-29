@@ -24,44 +24,52 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 container mx-auto px-4 text-center"
+        className="relative z-10 container mx-auto px-4"
       >
-        <p className="text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mb-4 tracking-tight text-gray-400">
-          Based In France
-        </p>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 tracking-tight">
-          <span className="text-white">Constant </span>
-          <span className="text-purple-500">Roblox </span>
-          <span className="text-purple-500">Scripting </span>
-          <span className="text-purple-500">Services </span>
-          <span className="text-purple-500">&amp; </span>
-          <span className="text-white">Portfolio</span>
-        </h1>
-        
-
-        <div className="flex flex-wrap justify-center gap-4">
-          <button
-            onClick={() => {
-              const projectsSection = document.querySelector('#projects');
-              if (projectsSection) {
-                projectsSection.scrollIntoView({ 
-                  behavior: 'smooth',
-                  block: 'start'
-                });
-              }
-            }}
-            className="relative z-10 inline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border border-dark-700 bg-[linear-gradient(110deg,#1A1A1A,45%,#262626,55%,#1A1A1A)] hover:bg-[linear-gradient(110deg,#262626,45%,#404040,55%,#262626)] bg-[length:200%_100%] px-6 font-medium text-sm sm:text-base text-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-          >
-            View Projects
-          </button>
-          <a
-            href="https://discord.com/users/1174734956296155278"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative z-10 inline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border border-dark-700 bg-[linear-gradient(110deg,#1A1A1A,45%,#262626,55%,#1A1A1A)] hover:bg-[linear-gradient(110deg,#262626,45%,#404040,55%,#262626)] bg-[length:200%_100%] px-6 font-medium text-sm sm:text-base text-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
-          >
-            Contact Me
-          </a>
+        <div className="flex flex-col items-center text-center max-w-6xl mx-auto">
+          <p className="text-gray-400 uppercase tracking-[0.2em] text-sm font-medium select-none">
+            Based In France
+          </p>
+          <h1 className="mt-6 text-[clamp(2.5rem,8vw,5.5rem)] leading-[1.1] font-bold tracking-tight select-none">
+            <span className="text-white">Constant </span>
+            <span className="text-purple-500">Roblox </span>
+            <span className="text-purple-500">Scripting </span>
+            <span className="text-purple-500">Services </span>
+            <span className="text-purple-500">&amp; </span>
+            <span className="text-white">Portfolio</span>
+          </h1>
+          <p className="mt-6 text-gray-300 text-xl max-w-3xl select-none">
+            Hi, I'm Constant, I write clean, organized roblox scripts that can be used to build reliable games and systems on Roblox.
+          </p>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-6">
+            <a 
+              href="#projects"
+              className="relative z-10 inline-flex gap-2.5 h-12 animate-shimmer items-center justify-center rounded-md border border-dark-700 bg-[linear-gradient(110deg,#1A1A1A,45%,#262626,55%,#1A1A1A)] hover:bg-[linear-gradient(110deg,#262626,45%,#404040,55%,#262626)] bg-[length:200%_100%] px-6 font-medium text-sm sm:text-base text-slate-200 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+            >
+              <span>See My Works</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </a>
+            <a
+              href="https://discord.com/users/1174734956296155278"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative z-10 inline-flex gap-2.5 h-12 items-center justify-center rounded-md border border-purple-500/20 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-500 hover:via-purple-400 hover:to-purple-500 px-6 font-medium text-sm sm:text-base text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-slate-50 animate-gradient bg-[length:200%_auto]"
+            >
+              <span>Contact on Discord</span>
+              <div className="relative w-5 h-5 transition-transform duration-200 group-hover:scale-110">
+                <img
+                  alt="Discord Logo"
+                  loading="lazy"
+                  decoding="async"
+                  data-nimg="fill"
+                  className="object-contain brightness-200 absolute inset-0 h-full w-full"
+                  src="/discordLogo.svg"
+                />
+              </div>
+            </a>
+          </div>
         </div>
       </motion.div>
     </div>
