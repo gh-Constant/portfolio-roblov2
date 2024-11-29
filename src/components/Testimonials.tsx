@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 import { Star, User } from 'lucide-react';
-import { testimonials } from '../data/testimonials';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTestimonials } from '../data/testimonials';
 
 export default function Testimonials() {
+  const { t } = useLanguage();
+  const testimonials = useTestimonials();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -35,9 +39,9 @@ export default function Testimonials() {
               <Star key={id} className="w-6 h-6 text-purple-500 fill-purple-500" />
             ))}
           </div>
-          <h2 className="text-4xl font-bold mb-4">Client Testimonials</h2>
+          <h2 className="text-4xl font-bold mb-4">{t('testimonials.title')}</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Here's what clients say about working with me.
+            {t('testimonials.description')}
           </p>
         </motion.div>
 

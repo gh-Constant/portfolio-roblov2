@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import { ExternalLink, Play } from 'lucide-react';
 import { useContent } from '../hooks/useContent';
 import { Project } from '../types/content';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Projects() {
   const { content, loading, error } = useContent();
+  const { t } = useLanguage();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -23,19 +25,19 @@ export default function Projects() {
     }
   };
 
-  if (loading) return <div className="py-20 text-center">Loading...</div>;
-  if (error) return <div className="py-20 text-center">Error loading projects</div>;
-  if (!content) return null;
+  if (loading) return <div className="py-20 text-center">{t('projects.loading')}</div>;
+  if (error) return <div className="py-20 text-center">{t('projects.error')}</div>;
+  if (!content?.projects) return null;
 
   return (
     <section id="projects" className="py-20 bg-black">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
         <motion.div variants={itemVariants} className="space-y-4 mb-10">
           <h1 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold text-stone-200">
-            Projects
+            {t('projects.title')}
           </h1>
           <p className="text-stone-200/70 text-sm min-[430px]:text-base max-w-lg md:max-w-3xl">
-            Discover the projects I've worked on, showcasing my skills and creativity.
+            {t('projects.description')}
           </p>
         </motion.div>
         <motion.div
@@ -73,7 +75,7 @@ export default function Projects() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-1">{project.title}</h3>
-                <p className="text-sm text-gray-400 mb-3">Owned by {project.creator}</p>
+                <p className="text-sm text-gray-400 mb-3">{t('projects.ownedBy')} {project.creator}</p>
                 <p className="text-gray-400 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag: string) => (
@@ -91,7 +93,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300"
                 >
-                  View Project <ExternalLink size={16} />
+                  {t('projects.viewProject')} <ExternalLink size={16} />
                 </a>
               </div>
             </motion.div>

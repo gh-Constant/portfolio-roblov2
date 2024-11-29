@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { technologies } from '../data/technologies';
+import { useLanguage } from '../contexts/LanguageContext';  
 
 export default function Technologies() {
+  const { t } = useLanguage();
+
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -35,10 +38,10 @@ export default function Technologies() {
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
         <motion.div variants={itemVariants} className="space-y-4 mb-10">
           <h1 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold text-stone-200">
-            Current technologies
+            {t('technologies.title')}
           </h1>
           <p className="text-stone-200/70 text-sm min-[430px]:text-base max-w-lg md:max-w-3xl">
-            I'm proficient in a range of modern technologies that empower me to build highly functional solutions.
+            {t('technologies.description')}
           </p>
         </motion.div>
 
