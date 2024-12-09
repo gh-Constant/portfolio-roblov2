@@ -29,7 +29,7 @@ export default function Systems() {
   if (!content?.systems) return null;
 
   return (
-    <section className="py-20 bg-black">
+    <section id="systems" className="py-20 bg-black">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
         <motion.div variants={itemVariants} className="space-y-4 mb-10">
           <h1 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold text-stone-200">

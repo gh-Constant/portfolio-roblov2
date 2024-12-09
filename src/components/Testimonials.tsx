@@ -25,7 +25,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="py-20 bg-black">
+    <section id="testimonials" className="py-20 bg-black">
       <motion.div
         className="container mx-auto px-4"
         variants={containerVariants}

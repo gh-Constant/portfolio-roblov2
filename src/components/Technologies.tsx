@@ -35,7 +35,7 @@ export default function Technologies() {
       className="relative z-[10] py-16 sm:py-24 bg-black"
       id="about"
     >
-      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+      <div id="technologies" className="max-w-[1400px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
         <motion.div variants={itemVariants} className="space-y-4 mb-10">
           <h1 className="text-3xl min-[430px]:text-4xl md:text-5xl font-bold text-stone-200">
             {t('technologies.title')}
