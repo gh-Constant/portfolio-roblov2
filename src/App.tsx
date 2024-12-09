@@ -7,6 +7,7 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import LanguageToggle from './components/LanguageToggle';
 import { LanguageProvider } from './contexts/LanguageContext';
+import OutsideProjects from './components/OutsideProjects';
 
 function App() {
   return (
@@ -15,8 +16,10 @@ function App() {
         <LanguageToggle />
         <Hero />
         <Technologies />
-        <Systems />
         <Projects />
+        <Systems />
+        <OutsideProjects
+        />
         <Testimonials />
         <Footer />
       </div>

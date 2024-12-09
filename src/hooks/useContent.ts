@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
-
-interface ContentData {
-  systems: any[];
-  projects: any[];
-}
+import { ContentData } from '../types/content';
 
 const CONTENT_URL = 'https://raw.githubusercontent.com/gh-constant/portfoliorbx-content/main/content.json';
 

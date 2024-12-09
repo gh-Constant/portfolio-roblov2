@@ -14,6 +14,16 @@ export interface Project {
   projectDate: string;
 }
 
+export interface OutsideProject {
+  title: string;
+  description: string;
+  media: Media;
+  tags: string[];
+  link: string;
+  creator: string;
+  projectDate: string;
+}
+
 export interface System {
   title: string;
   description: string;
@@ -24,4 +34,5 @@ export interface System {
 export interface ContentData {
   projects: Project[];
   systems: System[];
-} 
+  outsideProjects: OutsideProject[];
+}

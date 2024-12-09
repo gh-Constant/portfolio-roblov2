@@ -1,11 +1,19 @@
 import { motion } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
-  
+import Wave from 'react-wavify';
+
 export default function Hero() {
   const { t } = useLanguage();
 
+  const waveOptions = {
+    height: 5,
+    amplitude: 15,
+    speed: 0.2,
+    points: 4
+  };
+
   return (
-    <div className="relative min-h-screen bg-black flex items-center justify-center py-20">
+    <div className="relative min-h-screen bg-black flex items-center justify-center py-20 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -21,7 +29,29 @@ export default function Hero() {
         />
       </div>
 
-      
+      <div className="absolute inset-0 z-0">
+        <div className="absolute bottom-[20%] left-0 right-0 h-[1px]">
+          <Wave 
+            fill='rgba(255, 255, 255, 1)'
+            paused={false}
+            options={{...waveOptions, height: 0.1}}
+          />
+        </div>
+        <div className="absolute bottom-[50%] left-0 right-0 h-[1px]">
+          <Wave 
+            fill='rgba(255, 255, 255, 0.2)'
+            paused={false}
+            options={{...waveOptions, amplitude: 10, speed: 0.3, points: , height: 0.1}}
+          />
+        </div>
+        <div className="absolute bottom-[80%] left-0 right-0 h-[1px]">
+          <Wave 
+            fill='rgba(255, 255, 255, 0.2)'
+            paused={false}
+            options={{...waveOptions, height: 0.1}}
+          />
+        </div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -75,3 +105,4 @@ export default function Hero() {
     </div>
   );
 }
+

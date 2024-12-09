@@ -20,7 +20,7 @@ const translations = {
     "footer.contact": "Contact",
     "footer.links": "Links",
     "footer.social": "Social",
-    "footer.rights": "© {year} Constant Scripting Services. All rights reserved.",
+    "footer.rights": " {year} Constant Scripting Services. All rights reserved.",
     "technologies.title": "Technologies & Tools",
     "technologies.description": "I use modern tools and technologies to create robust and scalable Roblox experiences.",
     "systems.title": "Game Systems",
@@ -31,7 +31,12 @@ const translations = {
     "projects.ownedBy": "Owned by",
     "testimonials.title": "Client Testimonials",
     "testimonials.description": "Here's what some of my clients have to say about working with me.",
-    "projects.date": "Project Date: "
+    "projects.date": "Project Date: ",
+    "outsideProjects.title": "Outside Projects",
+    "outsideProjects.description": "Beyond Roblox development, I work on various other programming projects. Here are some highlights.",
+    "outsideProjects.loading": "Loading outside projects...",
+    "outsideProjects.error": "Error loading outside projects.",
+    "outsideProjects.date": "Project Date: ",
   },
   fr: {
     "hero.location": "Basé en France",
@@ -44,7 +49,7 @@ const translations = {
     "footer.contact": "Contact",
     "footer.links": "Liens",
     "footer.social": "Réseaux",
-    "footer.rights": "© {year} Services de Scripting Constant. Tous droits réservés.",
+    "footer.rights": " {year} Services de Scripting Constant. Tous droits réservés.",
     "technologies.title": "Technologies & Outils",
     "technologies.description": "J'utilise des outils et technologies modernes pour créer des expériences Roblox robustes et évolutives.",
     "systems.title": "Systèmes de Jeu",
@@ -55,7 +60,12 @@ const translations = {
     "projects.ownedBy": "Créé par",
     "testimonials.title": "Témoignages Clients",
     "testimonials.description": "Voici ce que certains de mes clients disent de leur collaboration avec moi.",
-    "projects.date": "Date du Projet : "
+    "projects.date": "Date du Projet : ",
+    "outsideProjects.title": "Autres Projets",
+    "outsideProjects.description": "Au-delà du développement Roblox, je travaille sur divers autres projets de programmation. Voici quelques points forts.",
+    "outsideProjects.loading": "Chargement des autres projets...",
+    "outsideProjects.error": "Erreur lors du chargement des autres projets.",
+    "outsideProjects.date": "Date du Projet : "
   }
 };
 
